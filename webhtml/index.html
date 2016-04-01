@@ -15,32 +15,20 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- 统一调用requireconfig -->
+    <script src="../js/requireconfig.js"></script>
   </head>
   <body>
+    
+    <a href="javascript:" id="btn1">email me</a>
 
-	
-	<!--首页内容部分开始-->
-	<!-- <div class="container">
-        <div class="row">
-            <div class="col-md-8">11</div>
-            <div class="col-md-4 touzi">
-                <h3 class="">投资进度</h3>
-                <div class="bar">
-                    <span><em style="width:60%;"></em></span>
-                    <i>60%</i>
-                </div>
-            </div>
-        </div>
-    </div> -->
-	<!--首页内容部分结束-->
-
-<a href="javascript:" id="btn1">email me</a>
-
-
-    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
-    <script src="../moudle/jquery/jquery.js"></script>
-    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
-    <script src="../moudle/bootstrap/js/bootstrap.js"></script>
+    <!-- 
+        如果要使用Bootstrap的js插件，必须先调入jQuery
+        <script src="../moudle/jquery/jquery.js"></script>
+        包括所有bootstrap的js插件或者可以根据需要使用的js插件调用
+        <script src="../moudle/bootstrap/js/bootstrap.js"></script>
+     -->
 
 	<!-- 引入require模块，关联../js/index.js -->
 	<script src="../moudle/requirejs/require.js" data-main="../js/index"></script>
