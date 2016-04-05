@@ -34,6 +34,7 @@ require.config({
         "lightbox":"../moudle/lightbox/js/lightbox",
         //css文件的定义方法
         "layercss": "../moudle/layer/skin/layer",               //异步请求layer插件需要的layer.css文件
+        "layerextcss":"../moudle/layer/skin/layer.ext",         //异步请求layer.ext.js插件需要的layer.ext.css文件
         "lightboxcss":"../moudle/lightbox/css/lightbox"         //异步请求light插件需要的layer.css文件
     },
     waitSeconds: 10 ,
@@ -49,6 +50,11 @@ require.config({
         "layer":{
             deps:['jquery'],
             exports:"layer"
+        },
+        //调用layer相册功能之前，必须先加载jquery.ext.js。layer插件需要在jq的环境下才能运行。
+        "layerext":{
+            deps:['jquery'],
+            exports:"layerext"
         },
         //调用bootstrap.js之前，必须先加载jquery.js。bootstrap插件需要在jq的环境下才能运行。
         "bootstrap":{
@@ -66,7 +72,7 @@ require.config({
 //（以上方法二选一）
 
 //通过主模块，运用AMD规范定义的的require()函数调用其他模块。这里分别是(jquery.js)、(all.js)、(boss.js)三个子模块。
-require(['jquery','layer','layerext','validate','bootstrap','lightbox','cssjs!layercss','cssjs!lightboxcss'], function (){
+require(['jquery','validate','bootstrap','layer','layerext','lightbox','cssjs!layercss','cssjs!layerextcss','cssjs!lightboxcss'], function (){
     //require()函数接受两个参数。
     //第一个参数是一个数组，表示所依赖的模块，上例就是['moduleA', 'moduleB', 'moduleC']，即主模块依赖这三个模块；
     //第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。
@@ -96,12 +102,12 @@ require(['jquery','layer','layerext','validate','bootstrap','lightbox','cssjs!la
         });
     });
 
-    /*lightbox实现图片点击放大居中效果测试*/
-    //$('a').lightBox();
     
     /*layer实现图片点击放大居中效果测试*/
-    layer.photos({
-        photos: '#layerbox'
+    layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+        layer.photos({
+            photos: '#layerbox'
+        });
     });
 
 });
