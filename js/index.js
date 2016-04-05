@@ -101,14 +101,6 @@ require(['jquery','validate','bootstrap','layer','layerext','lightbox','cssjs!la
             } 
         });
     });
-
-    $('#btn2').click(function(){
-        layer.open({
-            type: 1,
-            area: ['600px', '360px'],
-            content: '\<\div style="padding:20px;"><a href="javascript:" id="eebtn"></a>\<\/div>'
-        });
-    });
     
     /*layer实现图片点击放大居中效果测试*/
     layer.ready(function(){ //为了layer.ext.js加载完毕再执行
