@@ -33,7 +33,7 @@ require(['jquery','validate','bootstrap','layer','layerext','lightbox','cssjs!la
         layer.open({
             type: 1,
             area: ['600px', '360px'],
-            content: '\<\div style="padding:20px;"><a href="javascript:" id="eebtn"></a>\<\/div>'
+            content: '\<\div style="padding:20px;"><a href="javascript:" id="eebtn">点击我</a>\<\/div>'
         });
     });
     
