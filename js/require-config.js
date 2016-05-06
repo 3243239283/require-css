@@ -26,16 +26,17 @@
 //2、逐一制定模块路径
 require.config({
     paths: {
-        "jquery": "../moudle/jquery/jquery",                    //加载jquery
+        //js文件定义
+        "jquery": "../moudle/jquery/jquery",                    //jquery
         "layer":"../moudle/layer/layer",                        //layer插件路径加载
         "layerext":"../moudle/layer/extend/layer.ext",
         "validate":"../moudle/validata/jquery.validate",        //表单验证插件
         "bootstrap":"../moudle/bootstrap/js/bootstrap",         //bootstrap框架插件js集合
         "lightbox":"../moudle/lightbox/js/lightbox",
-        //css文件的定义方法
-        "layercss": "../moudle/layer/skin/layer",               //异步请求layer插件需要的layer.css文件
-        "layerextcss":"../moudle/layer/skin/layer.ext",         //异步请求layer.ext.js插件需要的layer.ext.css文件
-        "lightboxcss":"../moudle/lightbox/css/lightbox"         //异步请求light插件需要的layer.css文件
+        //css文件的定义
+        "layercss": "../moudle/layer/skin/layer",                //layer插件需要的layer.css文件
+        "layerextcss":"../moudle/layer/skin/layer.ext",         //layer.ext.js插件需要的layer.ext.css文件
+        "lightboxcss":"../moudle/lightbox/css/lightbox"         //light插件需要的layer.css文件
     },
     waitSeconds: 10 ,
     //加载layer插件需要的css之前需要的require外部插件css.js
