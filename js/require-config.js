@@ -33,6 +33,7 @@ require.config({
         "validate":"../moudle/validata/jquery.validate",        //表单验证插件
         "bootstrap":"../moudle/bootstrap/js/bootstrap",         //bootstrap框架插件js集合
         "lightbox":"../moudle/lightbox/js/lightbox",
+        "a":"../js/a",
         //css文件的定义
         "layercss": "../moudle/layer/skin/layer",                //layer插件需要的layer.css文件
         "layerextcss":"../moudle/layer/skin/layer.ext",         //layer.ext.js插件需要的layer.ext.css文件
