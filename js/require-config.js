@@ -26,24 +26,21 @@
 //2、逐一制定模块路径
 require.config({
     paths: {
-        //js文件定义
-        "jquery": "../moudle/jquery/jquery",                    //jquery
+        "jquery": "../moudle/jquery/jquery",                    //加载jquery
         "layer":"../moudle/layer/layer",                        //layer插件路径加载
-        "layerext":"../moudle/layer/extend/layer.ext",
         "validate":"../moudle/validata/jquery.validate",        //表单验证插件
         "bootstrap":"../moudle/bootstrap/js/bootstrap",         //bootstrap框架插件js集合
         "lightbox":"../moudle/lightbox/js/lightbox",
-        "a":"../js/a",
-        //css文件的定义
-        "layercss": "../moudle/layer/skin/layer",                //layer插件需要的layer.css文件
-        "layerextcss":"../moudle/layer/skin/layer.ext",         //layer.ext.js插件需要的layer.ext.css文件
-        "lightboxcss":"../moudle/lightbox/css/lightbox"         //light插件需要的layer.css文件
+        "handlebars":"../moudle/handlebars/lib/handlebars",
+        //css文件的定义方法
+        "layercss": "../moudle/layer/skin/layer",               //异步请求layer插件需要的layer.css文件
+        "lightboxcss":"../moudle/lightbox/css/lightbox"         //异步请求light插件需要的layer.css文件
     },
     waitSeconds: 10 ,
     //加载layer插件需要的css之前需要的require外部插件css.js
     map: {
         '*': {
-            'cssjs': '../moudle/layer/css',
+            'cssjs': '../moudle/requirejs/css',
         }
     },
     
@@ -52,11 +49,6 @@ require.config({
         "layer":{
             deps:['jquery'],
             exports:"layer"
-        },
-        //调用layer相册功能之前，必须先加载jquery.ext.js。layer插件需要在jq的环境下才能运行。
-        "layerext":{
-            deps:['jquery'],
-            exports:"layerext"
         },
         //调用bootstrap.js之前，必须先加载jquery.js。bootstrap插件需要在jq的环境下才能运行。
         "bootstrap":{

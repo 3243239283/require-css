@@ -1,7 +1,5 @@
 //通过主模块，运用AMD规范定义的的require()函数调用其他模块。这里分别是(jquery.js)、(all.js)、(boss.js)三个子模块。
-require(['jquery','a','validate','bootstrap','layer','layerext','lightbox','cssjs!layercss','cssjs!layerextcss','cssjs!lightboxcss'], function ($,www){
-
-        www.www("");
+require(['jquery','handlebars','validate','bootstrap','layer','lightbox','cssjs!layercss','cssjs!lightboxcss'], function (jquery,handlebars){
     //require()函数接受两个参数。
     //第一个参数是一个数组，表示所依赖的模块，上例就是['moduleA', 'moduleB', 'moduleC']，即主模块依赖这三个模块；
     //第二个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。
